@@ -9,7 +9,7 @@ PS. sąrašo viduje atmintis privalo būti tvarkoma dinamiškai, be jokių memor
 
 ***** Valgrind testas
 
-Main():
+demo.c main():
 
 ![prog](https://user-images.githubusercontent.com/67113855/113329536-6061e200-9326-11eb-991e-7c3d8097edf8.jpg)
 
