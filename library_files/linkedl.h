@@ -24,12 +24,11 @@ struct linked_list *init_list();
  * @code
  * push(head, "int", 5);
  * push(head, "char", "test");
- * push(head, "void", "any value");
  * @endcode
  * @param head_node returned pointer from init_list() 
  * @param input_type data type of next argument
  * @param last argument must be the given value
- * @warning use only "int", "char", "void" for last argument
+ * @warning use only "int", "char" for last argument
 */
 void push(struct linked_list *const head_node, const char *input_type, ...);
 
@@ -54,6 +53,5 @@ int pop(struct linked_list *const head_node);
  * display(head);
  * @endcode
  * @param head_node returned pointer from init_list()
- * @note void value displays as memory address
 */
 void display(struct linked_list *const head_node);

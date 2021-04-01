@@ -7,7 +7,6 @@
 
 #define IS_INT 1
 #define IS_CHAR 2
-#define IS_VOID 3
 
 struct linked_list {
     int data_type;
@@ -47,10 +46,6 @@ int check_type(const char *input_type) {
     else if (strcmp(input_type, "char") == 0) {
         return 2;
     }
-    else if (strcmp(input_type, "void") == 0) {
-        return 3;
-        
-    }
     else {
         return 0;
     }
@@ -88,16 +83,6 @@ struct linked_list *ret_char_node(struct linked_list *const head_node, char *con
     strcpy( ((char *)temp_node->data) , input_value);
     temp_node->data_type = IS_CHAR;
 
-    return temp_node;
-}
-
-struct linked_list *ret_void_node(struct linked_list *const head_node, void *const input_value) {
-
-    struct linked_list *temp_node = init_list();
-  
-    temp_node->data = input_value;
-    temp_node->data_type = IS_VOID;
-  
     return temp_node;
 }
 
@@ -219,13 +204,6 @@ void push(struct linked_list *const head_node, const char *input_type, ...) {
                 break;
             }
 
-        case IS_VOID:
-            {   
-                void *vl = va_arg(ap, void *); 
-                temp_node = ret_void_node(head_node, vl);
-                break;
-            }
-            
         default:
             puts("Undefined input type");
             break;
@@ -257,11 +235,6 @@ void display(struct linked_list *const head_node) {
                     puts("");
                     break;
                 
-                case IS_VOID:
-                    printf("%p", temp_node->data);
-                    puts("");
-                    break;
-
                 default:
                     break;
             }
